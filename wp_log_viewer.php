@@ -9,12 +9,16 @@ Version: 1.0
 
 defined('ABSPATH') || exit;
 //require
-//
+//plugin dir_path(__FILE__) permet de récupérer le chemin du dossier du plugin (methde wordpress)
+require_once plugin_dir_path (__FILE__)."includes/LogViewer.php";
+
+use WPLogViewer\LogViewer;
 
 
 function _JL_init_pluggin()
 {
     //initialiser la classe principale du plugin
+    \WPLogViewer\LogViewer::getInstance()->init();
 
 }
 add_action('plugin_loaded', '_JL_init_pluggin');
