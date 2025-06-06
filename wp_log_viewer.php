@@ -17,11 +17,12 @@ function _JL_init_pluggin()
     //initialiser la classe principale du plugin
 
 }
-add_action('plugins_loaded', '_JL_init_pluggin');
+add_action('plugin_loaded', '_JL_init_pluggin');
 
 function JL_log_viewer_activate()
 {
-//appeler une méthode de la classe principale pour mener des actions  
+error_log('Le plugin a été activé');
+   
 }
 
 register_activation_hook(__FILE__, 'JL_log_viewer_activate');
@@ -29,6 +30,8 @@ register_activation_hook(__FILE__, 'JL_log_viewer_activate');
 
 function JL_log_viewer_deactivation()
 {
+
+    error_log("Le plugin a été désactivé");
 //appeler une methode de la classe principle pour mener des actions
 
 }
